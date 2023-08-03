@@ -1,0 +1,76 @@
+.Card {
+  width: 320px;
+  height: fit-content;
+  border-radius: 10px;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+  //   font-weight: $regular;
+  .Info {
+    display: flex;
+    gap: 3px;
+    .Price {
+      font-weight: $bold;
+    }
+    .Type {
+    }
+  }
+  .ArrivalBoatWrapper {
+    display: flex;
+    justify-content: space-between;
+    .ArrivalWrapper {
+      display: flex;
+      flex-direction: column;
+      .Arrival {
+        text-transform: uppercase;
+        color: $light-blue;
+      }
+    }
+  }
+  .ArrivalDepartureWrapper {
+    display: flex;
+
+    width: 100%;
+    justify-content: space-between;
+    img {
+
+
+      width: 25px;
+      height: 25px;
+    }
+    .DepartureWrapper {
+      display: flex;
+      width: 100px;
+
+      flex-direction: column;
+      .Time {
+        color: $light-blue;
+      }
+    }
+  }
+  .ReservationWrapper {
+    .Reservations {
+      text-transform: capitalize;
+      display: flex;
+      gap: 3px;
+    }
+    .Available {
+      p:first-child {
+        color: $light-blue;
+      }
+      display: flex;
+      gap: 3px;
+
+    }
+  }
+  .Button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    color: $white;
+    background-color: $dark-blue;
+  }
+}
