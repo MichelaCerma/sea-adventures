@@ -2,12 +2,16 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.scss";
+import { useState } from "react";
 import Logo from "@/assets/images/logo.svg";
 import Hero from "@/assets/images/hero.jpeg";
+import Banner from "@/assets/images/banner.jpeg";
 import CardList from "@/components/cardList";
+import CardReduced from "@/components/cardReduced";
+import CardRandom from "@/components/cardRandom";
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({ data }) {
   return (
     <>
       <Head>
@@ -24,9 +28,39 @@ export default function Home() {
         <Image src={Hero} />
       </main>
 
+      <section className={styles.LimitedCard}>
+        <CardReduced data={data} />
+      </section>
+      <section className={styles.Banner}>
+        <Image src={Banner} />
+        <div className={styles.TextBannerWrapper}>
+          <div className={styles.FirstTitle}>
+            <h2>+20</h2>
+            <h2>Destinazioni</h2>
+          </div>
+          <div className={styles.SecondTitle}>
+            <h2>+15</h2>
+            <h2>Imbarcazioni</h2>
+          </div>
+
+          <div className={styles.ThirdTitle}>
+            <h2>+40</h2>
+            <h2>Itinerari</h2>
+          </div>
+        </div>
+      </section>
       <section>
-        <CardList />
+        <CardRandom />
       </section>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch(`https://api.npoint.io/9e0963c22cd7e557f18c`);
+  const data = await res.json();
+
+  // Pass data to the page via props
+  return { props: { data } };
 }

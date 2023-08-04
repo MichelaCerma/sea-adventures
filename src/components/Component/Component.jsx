@@ -1,5 +1,5 @@
-import styles from "./Prova.module.scss";
-const components = () => {
+import styles from "./Components.module.scss";
+const Components = () => {
   return <></>;
 };
-export default CardList;
+export default Components;

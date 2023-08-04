@@ -1,5 +1,5 @@
 .Header {
-    padding: 18px 0;
+  padding: 18px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  h2{
+  h2 {
     color: $white;
     font-weight: $semibold;
     font-size: $h1;
@@ -24,5 +24,41 @@
     height: 100%;
     z-index: -2;
     filter: brightness(0.5);
+  }
+}
+.LimitedCard {
+  padding-top: 60px;
+}
+.Banner {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $white;
+  font-size: $h3;
+  font-weight: $regular;
+  img {
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    filter: brightness(0.5);
+  }
+  .TextBannerWrapper {
+
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .FirstTitle {
+    display: flex;
+    flex-direction: column;
   }
 }

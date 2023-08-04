@@ -1,2 +1,2 @@
-import components from './CardList.jsx'
-export default CardList;
+import Components from './Components.jsx'
+export default Components;
