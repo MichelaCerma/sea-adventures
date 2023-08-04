@@ -1,7 +1,18 @@
+.Wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 .Dropdown {
+  align-self: flex-end;
+  margin-right: 100px;
+  margin-bottom: 20px;
   font-size: 15px;
   padding: 10px;
   width: fit-content;
   color: $black;
-
 }

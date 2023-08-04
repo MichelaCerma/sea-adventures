@@ -54,7 +54,7 @@ const FilteredDeparture = () => {
   };
 
   return (
-    <>
+    <div className={styles.Wrapper}>
       <select
         className={styles.Dropdown}
         onChange={onHandleChange}
@@ -82,7 +82,7 @@ const FilteredDeparture = () => {
                 </div>
               ))}
       </div>
-    </>
+    </div>
   );
 };
 
