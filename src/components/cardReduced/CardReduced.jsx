@@ -10,12 +10,18 @@ const CardReduced = ({ data }) => {
   };
   return (
     <>
-      <div className={style.CardList}>
-        {trips.slice(0, counter).map((trip) => (
-          <Card trip={trip} key={trip.id} />
-        ))}
+      <div className={styles.Wrapper}>
+        <div className={style.CardList}>
+          {trips.slice(0, counter).map((trip) => (
+            <Card trip={trip} key={trip.id} />
+          ))}
+        </div>
+        <div>
+          <button className={styles.Button} onClick={onHanldeClick}>
+            MOSTRA ALTRI
+          </button>
+        </div>
       </div>
-        <button onClick={onHanldeClick}>yolo</button>
     </>
   );
 };

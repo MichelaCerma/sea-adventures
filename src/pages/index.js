@@ -10,9 +10,10 @@ import CardList from "@/components/cardList";
 import CardReduced from "@/components/cardReduced";
 import CardRandom from "@/components/cardRandom";
 import DropdownCard from "@/components/dropdownCard";
+import FilteredDeparture from "@/components/filteredDeparture/";
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({ data }) {
+export default function Home() {
   return (
     <>
       <Head>
@@ -28,7 +29,6 @@ export default function Home({ data }) {
         <h2>Lorem ipsum dolor sit amet</h2>
         <Image src={Hero} />
       </main>
-
       <section className={styles.LimitedCard}>
         <CardReduced />
       </section>
@@ -54,20 +54,21 @@ export default function Home({ data }) {
         <CardRandom />
       </section>
       <section className={styles.Dropdown}>
-        <DropdownCard data={data} />
+        <DropdownCard />
       </section>
-      <footer>
-        
-      </footer>
+      <section>
+        <FilteredDeparture />
+      </section>
+      <footer className={styles.Footer}></footer>
     </>
   );
 }
 
-export async function getServerSideProps() {
-  // Fetch data from external API
-  const res = await fetch(`https://api.npoint.io/9e0963c22cd7e557f18c`);
-  const data = await res.json();
+// export async function getServerSideProps() {
+//   // Fetch data from external API
+//   const res = await fetch(`https://api.npoint.io/9e0963c22cd7e557f18c`);
+//   const data = await res.json();
 
-  // Pass data to the page via props
-  return { props: { data } };
-}
+//   // Pass data to the page via props
+//   return { props: { data } };
+// }

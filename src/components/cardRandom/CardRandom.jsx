@@ -3,24 +3,18 @@ import styles from "./CardRandom.module.scss";
 import { useEffect, useState } from "react";
 import style from "@/components/cardList/CardList.module.scss";
 import { trips } from "@/mock/data";
-const CardRandom = ({ data }) => {
+const CardRandom = () => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  const randomArr = trips;
-  let currentIndex = randomArr.length,
-    randomIndex;
+  const newArr = [];
+  for (let i = 0; i <= 7; i++) {
+    const randomNum = Math.floor(Math.random() * 8); // Genera un numero casuale da 0 a 9
 
-  while (currentIndex != 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-    [randomArr[currentIndex], randomArr[randomIndex]] = [
-      randomArr[randomIndex],
-      randomArr[currentIndex],
-    ];
+    newArr.push(trips[randomNum]);
   }
 
   return (
@@ -29,7 +23,7 @@ const CardRandom = ({ data }) => {
         <div className={styles.CardRandom}>
           <h2>Avventure da scoprire</h2>
           <div className={style.CardList}>
-            {randomArr?.slice(0, 8).map((trip) => (
+            {newArr?.map((trip) => (
               <Card trip={trip} key={trip.id} />
             ))}
           </div>

@@ -5,9 +5,7 @@ import Card from "../card";
 import { trips } from "@/mock/data.js";
 import style from "@/components/cardList/CardList.module.scss";
 const DropdownCard = () => {
-  console.log(trips);
   const [showAll, setShowALl] = useState(false);
-  const [showArrival, setShowArrival] = useState(false);
   const arrival = [
     {
       place: "Palermo",
@@ -43,13 +41,12 @@ const DropdownCard = () => {
     },
     {
       place: "Ustica",
-      id: 8,
+      id: 9,
     },
   ];
 
   const onHandleChange = (e) => {
     setShowALl(!showAll);
-    console.log(e.target[0].label);
   };
   return (
     <div className={styles.Wrapper}>
@@ -75,7 +72,9 @@ const DropdownCard = () => {
           </div>
         ))
       ) : (
-        <CardList />
+        <div className={style.CardList}>
+          <CardList />
+        </div>
       )}
     </div>
   );
