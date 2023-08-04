@@ -19,7 +19,7 @@ const Card = ({ trip }) => {
       <div className={styles.ArrivalBoatWrapper}>
         <div className={styles.ArrivalWrapper}>
           <p className={styles.Arrival}>partenza da</p>
-          <h3 className={styles.ArrivalPlace}>{trip.arrival.Port}</h3>
+          <h3 className={styles.ArrivalPlace}>{trip.departure.Port}</h3>
         </div>
         <div className={styles.BoatWrapper}>
           <p>{trip.boatType}</p>

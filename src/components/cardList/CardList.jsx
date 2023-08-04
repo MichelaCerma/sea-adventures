@@ -5,13 +5,11 @@ import { trips } from "@/mock/data";
 const CardList = ({ setCounter, counter }) => {
   return (
     <>
-      
+      {trips.map((trip) => (
+        <Card trip={trip} key={trip.id} />
+      ))}
     </>
   );
 };
 
 export default CardList;
-
-// {
-//   trips.map((trip) => <Card trip={trip} key={trip.id} />);
-// }

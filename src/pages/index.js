@@ -9,6 +9,7 @@ import Banner from "@/assets/images/banner.jpeg";
 import CardList from "@/components/cardList";
 import CardReduced from "@/components/cardReduced";
 import CardRandom from "@/components/cardRandom";
+import DropdownCard from "@/components/dropdownCard";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ data }) {
@@ -29,7 +30,7 @@ export default function Home({ data }) {
       </main>
 
       <section className={styles.LimitedCard}>
-        <CardReduced data={data} />
+        <CardReduced />
       </section>
       <section className={styles.Banner}>
         <Image src={Banner} />
@@ -52,6 +53,12 @@ export default function Home({ data }) {
       <section>
         <CardRandom />
       </section>
+      <section className={styles.Dropdown}>
+        <DropdownCard data={data} />
+      </section>
+      <footer>
+        
+      </footer>
     </>
   );
 }
